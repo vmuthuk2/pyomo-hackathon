@@ -1,0 +1,6 @@
+name: pyomo-hackathon
+
+dependencies:
+  - python >= 3.6
+  - pyomo
+  - pyomo.extras
