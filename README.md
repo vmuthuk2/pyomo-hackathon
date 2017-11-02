@@ -2,7 +2,7 @@
 [![GitPitch](https://gitpitch.com/assets/badge.svg)](https://gitpitch.com/KAPSARC/pyomo-hackathon/master)
 
 # pyomo-hackathon
-Exploring pyomo as a possible complement to GAMS for KAPSARC modeling efforts.
+Exploring [Pyomo](http://www.pyomo.org/), a Python-based, open-source optimization modeling language, as a possible complement to GAMS for KAPSARC modeling efforts.
 
 ## Running the notebooks locally
 To run the notebooks locally you will need a working installation of
