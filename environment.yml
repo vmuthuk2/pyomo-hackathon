@@ -2,5 +2,6 @@ name: pyomo-hackathon
 
 dependencies:
   - python >= 3.6
+  - glpk
   - pyomo
   - pyomo.extras
