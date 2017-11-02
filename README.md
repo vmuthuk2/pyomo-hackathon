@@ -1,4 +1,4 @@
-[![Binder](http://mybinder.org/badge.svg)](https://beta.mybinder.org/v2/gh/KAPSARC/pyomo-hackathlon/master?filepath=index.ipynb)
+[![Binder](http://mybinder.org/badge.svg)](https://beta.mybinder.org/v2/gh/KAPSARC/pyomo-hackathon/master?filepath=index.ipynb)
 
 # pyomo-hackathon
 Exploring pyomo as a possible complement to GAMS for KAPSARC modeling efforts.
