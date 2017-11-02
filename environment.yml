@@ -10,4 +10,4 @@ dependencies:
   - pyomo.extras
   - scipy
   - pip:
-    - install git+https://github.com/NREL/gdx-pandas.git@v1.0.1
+    - git+https://github.com/NREL/gdx-pandas.git@v1.0.1
