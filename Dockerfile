@@ -12,10 +12,11 @@ RUN conda install --quiet --yes \
 USER root
 
 # Install GAMS
-RUN wget -q https://d37drm4t2jghv5.cloudfront.net/distributions/24.9.1/linux/linux_x64_64_sfx.exe && \
-    mkdir /opt/gams && \
+RUN mkdir /opt/gams && \
     cd /opt/gams && \
-    ~/linux_x64_64_sfx.exe && \
-    rm linux_x64_64_sfx.exe
+    wget -q https://d37drm4t2jghv5.cloudfront.net/distributions/24.9.1/linux/linux_x64_64_sfx.exe && \
+    ./linux_x64_64_sfx.exe && \
+    rm linux_x64_64_sfx.exe && \
+    cd $HOME
 
 USER $NB_USER
