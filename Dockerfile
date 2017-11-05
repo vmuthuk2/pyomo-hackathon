@@ -17,5 +17,8 @@ RUN mkdir $HOME/gams && \
     ./linux_x64_64_sfx.exe && \
     rm linux_x64_64_sfx.exe && \
     cd $HOME
+    
+# Add local files as late as possible to avoid cache busting
+COPY *.ipynb
 
 USER $NB_USER
