@@ -7,7 +7,7 @@ LABEL maintainer="davidrpugh <david.pugh@kapsarc.org>"
 RUN conda install --quiet --yes \
     'glpk' \
     'pyomo' \
-    'pyomo.extras' \
+    'pyomo.extras'
     
 # Install GAMS
 RUN wget -q https://d37drm4t2jghv5.cloudfront.net/distributions/24.9.1/linux/linux_x64_64_sfx.exe && \
