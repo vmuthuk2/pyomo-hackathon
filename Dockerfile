@@ -1,9 +1,9 @@
 # Start from a specific tagged Jupyter base image
-FROM jupyter/base-notebook:da2c5a4d00fa
+FROM jupyter/scipy-notebook:da2c5a4d00fa
 
 LABEL maintainer="davidrpugh <david.pugh@kapsarc.org>"
 
-# Install the Python 3 packages
+# Install the additional Python 3 packages
 RUN conda install --quiet --yes \
     'glpk' \
     'pyomo' \
