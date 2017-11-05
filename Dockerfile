@@ -19,6 +19,6 @@ RUN mkdir $HOME/gams && \
     cd $HOME
     
 # Add local files as late as possible to avoid cache busting
-COPY *.ipynb
+COPY *.ipynb $HOME
 
 USER $NB_USER
