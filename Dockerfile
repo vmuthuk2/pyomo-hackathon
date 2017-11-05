@@ -18,7 +18,11 @@ RUN mkdir /opt/gams && \
     chmod u+x linux_x64_64_sfx.exe && \
     ./linux_x64_64_sfx.exe && \
     rm linux_x64_64_sfx.exe && \
-    cd ./gams24.9_linux_x64_64_sfx/apifiles/Python/api_36 && \
+    export PATH=$PATH:~/opt/gams/gams24.9_linux_x64_64_sfx
+    cd $HOME    
+
+# Install the GAMS python bindings
+RUN cd /opt/gams/gams24.9_linux_x64_64_sfx/apifiles/Python/api_36 && \
     python setup.py install && \
     cd $HOME
     
