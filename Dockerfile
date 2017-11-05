@@ -9,6 +9,8 @@ RUN conda install --quiet --yes \
     'pyomo' \
     'pyomo.extras'
 
+USER root
+
 # Install GAMS
 RUN mkdir /opt/gams && \
     cd /opt/gams && \
