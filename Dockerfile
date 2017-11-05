@@ -19,7 +19,7 @@ RUN mkdir /opt/gams && \
     ./linux_x64_64_sfx.exe && \
     rm linux_x64_64_sfx.exe && \
     cd ./gams24.9.1_linux_x64_64_sfx/apifiles/Python/api && \
-    python setup.py install
+    python setup.py install && \
     cd $HOME
     
 # Add local files as late as possible to avoid cache busting
