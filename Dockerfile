@@ -29,7 +29,7 @@ RUN cd /opt/gams/gams24.9_linux_x64_64_sfx/apifiles/Python/api_36 && \
 # Install the pathampl solver (comes with GAMS but would ideally like to use it independently!)
 RUN mkdir /opt/pathampl && \
     cd /opt/pathampl
-RUN wget -q ftp://ftp.cs.wisc.edu/math-prog/solvers/path/ampl/lnx/pathampl
+RUN wget ftp://ftp.cs.wisc.edu/math-prog/solvers/path/ampl/lnx/pathampl
 RUN chmod u+x pathampl && \
     cd $HOME
 ENV PATH=/opt/pathampl/:$PATH
