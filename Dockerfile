@@ -32,7 +32,7 @@ EXPOSE 21
 # Install the pathampl solver (comes with GAMS but would like to use it independently!)
 RUN mkdir /opt/pathampl && \
     cd /opt/pathampl && \
-    wget -q ftp://ftp.cs.wisc.edu/math-prog/solvers/path/ampl/lnx/pathampl && \
+    wget ftp://ftp.cs.wisc.edu/math-prog/solvers/path/ampl/lnx/pathampl && \
     chmod u+x pathampl && \
     cd $HOME
 ENV PATH=/opt/pathampl/:$PATH
