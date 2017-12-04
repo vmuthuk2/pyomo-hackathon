@@ -26,13 +26,13 @@ RUN cd /opt/gams/gams24.9_linux_x64_64_sfx/apifiles/Python/api_36 && \
     python setup.py install && \
     cd $HOME
     
-# Need to publish the FTP port since pathampl solver lives on ftp server
-PUBLISH 21
+# Need to expose the FTP port since pathampl solver lives on ftp server
+EXPOSE 21
 
 # Install the pathampl solver (comes with GAMS but would like to use it independently!)
 RUN mkdir /opt/pathampl && \
     cd /opt/pathampl && \
-    wget -q ftp://ftp.cs.wisc.edu/math-prog/solvers/path/ampl/lnx/pathampl -o pathampl && \
+    wget -q ftp://ftp.cs.wisc.edu/math-prog/solvers/path/ampl/lnx/pathampl && \
     chmod u+x pathampl && \
     cd $HOME
 ENV PATH=/opt/pathampl/:$PATH
