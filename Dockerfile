@@ -25,9 +25,6 @@ ENV PATH=/opt/gams/gams24.9_linux_x64_64_sfx/:$PATH
 RUN cd /opt/gams/gams24.9_linux_x64_64_sfx/apifiles/Python/api_36 && \
     python setup.py install && \
     cd $HOME
-    
-# Need to expose the FTP port since pathampl solver lives on ftp server
-EXPOSE 21
 
 # Install the pathampl solver (comes with GAMS but would like to use it independently!)
 RUN mkdir /opt/pathampl && \
