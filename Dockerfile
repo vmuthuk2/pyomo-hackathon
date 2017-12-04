@@ -26,11 +26,15 @@ RUN cd /opt/gams/gams24.9_linux_x64_64_sfx/apifiles/Python/api_36 && \
     python setup.py install && \
     cd $HOME
     
-# Install the pathampl solver (comes with GAMS but would ideally like to use it independently!)
+# Install the pathampl solver (comes with GAMS but would like to use it independently!)
+RUN sudo apt-get -y update && \
+    apt-get -y upgrade && \
+    apt-get -y install curl && \
+    apt-get clean
 RUN mkdir /opt/pathampl && \
-    cd /opt/pathampl
-RUN curl ftp://ftp.cs.wisc.edu/math-prog/solvers/path/ampl/lnx/pathampl -o pathampl
-RUN chmod u+x pathampl && \
+    cd /opt/pathampl && \
+    curl ftp://ftp.cs.wisc.edu/math-prog/solvers/path/ampl/lnx/pathampl -o pathampl && \
+    chmod u+x pathampl && \
     cd $HOME
 ENV PATH=/opt/pathampl/:$PATH
 
