@@ -30,7 +30,7 @@ RUN cd /opt/gams/gams24.9_linux_x64_64_sfx/apifiles/Python/api_36 && \
 RUN mkdir /opt/pathampl && \
     cd /opt/pathampl && \
     wget -q http://ftp.cs.wisc.edu/math-prog/solvers/path/ampl/lnx/pathampl && \
-    chmod u+x pathampl && \
+    chmod a+x pathampl && \
     cd $HOME
 ENV PATH=/opt/pathampl/:$PATH
 
