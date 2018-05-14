@@ -12,7 +12,10 @@ RUN conda install --quiet --yes \
 USER root
 
 # Install GAMS
-ENV GAMS_VERSION="25.0.3"
+ENV GAMS_MAJOR=25 \
+    GAMS_MINOR=0 \
+    GAMS_PATCH=3
+ENV GAMS_VERSION=${GAMS_MAJOR}.${GAMS_MINOR}.${GAMS_PATCH}
 RUN mkdir /opt/gams && \
     cd /opt/gams && \
     wget -q https://d37drm4t2jghv5.cloudfront.net/distributions/${GAMS_VERSION}/linux/linux_x64_64_sfx.exe && \
@@ -23,7 +26,7 @@ RUN mkdir /opt/gams && \
 ENV PATH=/opt/gams/gams24.9_linux_x64_64_sfx/:$PATH 
 
 # Install the GAMS python bindings
-RUN cd /opt/gams/gams24.9_linux_x64_64_sfx/apifiles/Python/api_36 && \
+RUN cd /opt/gams/gams${GAMS_MAJOR}.${GAMS_MINOR}_linux_x64_64_sfx/apifiles/Python/api_36 && \
     python setup.py install && \
     cd $HOME
 
