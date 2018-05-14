@@ -34,6 +34,9 @@ RUN mkdir /opt/pathampl && \
     cd $HOME
 ENV PATH=/opt/pathampl/:$PATH
 
+# Set the license string for the PATH solver (valid until December 31, 2020)
+ENV PATH_LICENSE_STRING="2617827524&Courtesy&&&USR&64785&11_12_2017&1000&PATH&GEN&31_12_2020&0_0_0&5000&0_0"
+
 # Add local files as late as possible to avoid cache busting
 COPY *.ipynb $HOME/
 
