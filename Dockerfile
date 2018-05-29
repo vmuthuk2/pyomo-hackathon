@@ -12,9 +12,13 @@ RUN conda install --quiet --yes \
 USER root
 
 # Install GAMS
+ENV GAMS_MAJOR=25 \
+    GAMS_MINOR=0 \
+    GAMS_PATCH=3
+ENV GAMS_VERSION=${GAMS_MAJOR}.${GAMS_MINOR}.${GAMS_PATCH}
 RUN mkdir /opt/gams && \
     cd /opt/gams && \
-    wget -q https://d37drm4t2jghv5.cloudfront.net/distributions/24.9.1/linux/linux_x64_64_sfx.exe && \
+    wget -q https://d37drm4t2jghv5.cloudfront.net/distributions/${GAMS_VERSION}/linux/linux_x64_64_sfx.exe && \
     chmod u+x linux_x64_64_sfx.exe && \
     ./linux_x64_64_sfx.exe && \
     rm linux_x64_64_sfx.exe && \
@@ -22,7 +26,7 @@ RUN mkdir /opt/gams && \
 ENV PATH=/opt/gams/gams24.9_linux_x64_64_sfx/:$PATH 
 
 # Install the GAMS python bindings
-RUN cd /opt/gams/gams24.9_linux_x64_64_sfx/apifiles/Python/api_36 && \
+RUN cd /opt/gams/gams${GAMS_MAJOR}.${GAMS_MINOR}_linux_x64_64_sfx/apifiles/Python/api_36 && \
     python setup.py install && \
     cd $HOME
 
@@ -33,6 +37,9 @@ RUN mkdir /opt/pathampl && \
     chmod a+x pathampl && \
     cd $HOME
 ENV PATH=/opt/pathampl/:$PATH
+
+# Set the license string for the PATH solver (valid until December 31, 2020)
+ENV PATH_LICENSE_STRING="2617827524&Courtesy&&&USR&64785&11_12_2017&1000&PATH&GEN&31_12_2020&0_0_0&5000&0_0"
 
 # Add local files as late as possible to avoid cache busting
 COPY *.ipynb $HOME/
